@@ -1,7 +1,16 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <!--    <NuxtWelcome />  -->
-    <h1>Steve welcomes you.</h1>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
+
+<script setup lang="ts">
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - SCW` : 'SCW';
+  }
+})
+</script>
